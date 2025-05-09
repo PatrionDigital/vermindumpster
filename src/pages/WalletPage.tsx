@@ -4,10 +4,17 @@ import { useSolanaContext } from '@/contexts/SolanaContext';
 import { SolanaConnectButton } from '@/components/SolanaConnectButton';
 import { SolanaConnectModal } from '@/components/SolanaConnectModal';
 import { Page } from '@/components/Page';
+import {initDataState, useSignal} from '@telegram-apps/sdk-react';
 
 export const WalletPage: FC = () => {
   const { connected, publicKey } = useSolanaContext();
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Get Telegram user data
+  const userData = useSignal(initDataState);
+  const userName = userData?.user ? 
+    `${userData.user.first_name}${userData.user.last_name ? ' ' + userData.user.last_name : ''}` : 
+    'User';
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -16,7 +23,7 @@ export const WalletPage: FC = () => {
     <Page>
       <div style={{ padding: '16px' }}>
         <Title level="2" style={{ marginBottom: '16px' }}>
-          Solana Wallet Connection
+          Welcome, {userName}!
         </Title>
         
         <Text style={{ marginBottom: '24px' }}>
