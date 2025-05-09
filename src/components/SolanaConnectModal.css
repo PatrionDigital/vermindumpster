@@ -1,0 +1,26 @@
+.solana-connect-modal {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.solana-connect-modal-content {
+  background-color: var(--tg-theme-bg-color, #ffffff);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  padding: 16px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.solana-connect-modal-header {
+  margin-bottom: 16px;
+}
