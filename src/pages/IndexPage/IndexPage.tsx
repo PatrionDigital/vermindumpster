@@ -12,7 +12,7 @@ export const IndexPage: FC = () => {
     <Page back={false}>
       <List>
         <Section
-          header="Dumpster Vermin"
+          header="Vermigotchi"
           footer="Connect your Solana wallet to access $VERMIN token features"
         >
           <Link to="/wallet">
